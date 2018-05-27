@@ -7,11 +7,20 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class AindaNaoClientePage {
 
+  nomeCliente = "";
+  emailCliente = "";
+  escolaCliente = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AindaNaoClientePage');
+  enviarEmail(){
+
+  }
+
+  voltarLogin(){
+    this.navCtrl.pop();
   }
 
 }
