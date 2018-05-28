@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { LoginCorporativoPage } from '../login-corporativo/login-corporativo';
 import { LoginEscolarPage } from '../login-escolar/login-escolar';
 import { BlogPage } from '../blog/blog'
@@ -10,7 +10,10 @@ import { BlogPage } from '../blog/blog'
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private menu: MenuController) {
+
+    this.menu.enable(false, 'menuApp');
+
   }
 
   abrirEscola(){
