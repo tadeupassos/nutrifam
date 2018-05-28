@@ -33,16 +33,16 @@ export class MyApp {
     
     this.serv.abrirNutrifam().then((isLoggedIn) => {
 
-      //this.serv.carregarCardapio();
+      this.serv.carregarCardapio();
 
       if (isLoggedIn == '1'){
         setTimeout(() => {
           this.rootPage = CardapioPage;
-        }, 1000);
+        }, 2000);
       }else if(isLoggedIn == '2'){
         setTimeout(() => {
           this.rootPage = CardapioCorporativoPage;
-        }, 1000);
+        }, 2000);
       }else{
         this.rootPage = LoginPage;
       }

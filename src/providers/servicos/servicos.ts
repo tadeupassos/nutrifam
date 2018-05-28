@@ -7,7 +7,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ServicosProvider {
 
-  public qry = 'http://www.brandgo.com.br/appbrandgo/v1.2.0.1/querys/';
+  public qry = 'http://tadeupassos.xyz/nutrifam/querys/';
+
+  public cardapioSemana: any[] = [];
 
   usuario = {
     nome: '',
@@ -56,11 +58,13 @@ export class ServicosProvider {
   }  
 
   carregarCardapio(){
+
+    this.cardapioSemana = [];
     
     let headers = new Headers({ 'Content-Type' : 'application/x-www-form-urlencoded' });
-    let localiza = this.http.post(this.qry + "carregarCardapio.php",{
+    let localiza = this.http.post(this.qry + "carregarCardapios.php",{
       'tipo_cardapio' : 4,
-      'empresa' : 2,
+      'empresa' : 13,
       'semana' : 21
     },{
       headers:headers,
@@ -69,7 +73,21 @@ export class ServicosProvider {
 
       for (let i = 0; i < data.length; i++){
 
+        this.cardapioSemana.push({
+          tipoCardapio: data[i].tipoCardapio,
+          nomeEmpresa: data[i].nome,
+          numSemana: data[i].num_semana,
+          dataSemana: data[i].data_semana,
+          diaSemana: data[i].dia_semana,
+          dataDiaSemana: data[i].data_dia_semana,
+          item: data[i].item,
+          corItem: data[i].cor_item,
+          conteudo: data[i].conteudo,
+          obsDia: data[i].obs 
+        });
       }
+
+      console.log("cardapios: " + JSON.stringify(this.cardapioSemana));
       
     }, err => console.log('Deu erro carregarBrandsParaMapa(): ' + err));
   }

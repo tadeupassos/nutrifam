@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
+import { CardapioEscolarPage } from '../cardapio-escolar/cardapio-escolar';
 
 @Component({
   selector: 'page-cardapio',
@@ -15,6 +16,10 @@ export class CardapioPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CardapioPage');
+  }
+
+  abrirCardapioSemana(){
+    this.navCtrl.push(CardapioEscolarPage);
   }
 
 }

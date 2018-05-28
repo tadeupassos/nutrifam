@@ -15,28 +15,30 @@
 
 <ion-content class="card-background-page">
     
-  <ion-card>
+  <ion-card (tap)="abrirCardapioSemana()">
     <img src="assets/imgs/semana.png" class="imagem"/>
-    <div class="card-title">São Paulo</div>
-    <div class="card-subtitle">41 Listings</div>
+    <div class="card-title">Cardápio da Semana</div>
+    <div class="card-subtitle">Nome da Escola</div>
   </ion-card>
 
   <ion-card>
     <img src="assets/imgs/lancheira.png"/>
-    <div class="card-title">Amsterdam</div>
-    <div class="card-subtitle">64 Listings</div>
+    <div class="card-title">Cardápio Lancheira</div>
   </ion-card>
 
   <ion-card>
-    <img src="img/card-sf.png"/>
-    <div class="card-title">San Francisco</div>
-    <div class="card-subtitle">72 Listings</div>
+    <img src="assets/imgs/cantina.png"/>
+    <div class="card-title">Cardápio Cantina</div>
   </ion-card>
 
   <ion-card>
-    <img src="img/card-madison.png"/>
-    <div class="card-title">Madison</div>
-    <div class="card-subtitle">28 Listings</div>
+    <img src="assets/imgs/ultimosEventos.png"/>
+    <div class="card-title">Últimos Eventos</div>
   </ion-card>
+
+  <ion-card>
+    <img src="assets/imgs/blog.png"/>
+    <div class="blog">Blog da Nutrifam</div>
+  </ion-card>  
     
 </ion-content>

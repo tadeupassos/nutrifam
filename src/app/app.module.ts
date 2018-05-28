@@ -19,6 +19,7 @@ import { CardapioCorporativoPage } from '../pages/cardapio-corporativo/cardapio-
 import { FaleConoscoPage } from '../pages/fale-conosco/fale-conosco';
 
 import { ServicosProvider } from '../providers/servicos/servicos';
+import { AccordionComponent } from '../components/accordion/accordion';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ServicosProvider } from '../providers/servicos/servicos';
     CardapioPage,
     CardapioEscolarPage,
     CardapioCorporativoPage,
-    FaleConoscoPage
+    FaleConoscoPage,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
