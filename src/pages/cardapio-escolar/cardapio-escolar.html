@@ -14,100 +14,104 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides>
-    <ion-slide>
-      <ion-row>
-        <ion-col col-2>
+  
+  <div style="overflow: scroll">
+    <img src="assets/imgs/fundoSemana.png" style="width: 100%; position: absolute"/>
+    <ion-slides style="margin-top: 135px">
+      <ion-slide>
+        <ion-row>
+          <ion-col col-2>
 
-        </ion-col>
-        <ion-col col-8>
-          <div style="margin-top: 5px">Segunda-feira, 15/05</div>
-        </ion-col>
-        <ion-col col-2 (tap)="proximoDia()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <accordion *ngFor="let dia of segunda" [title]="dia.item" [corItem]="primary">
-        <ion-item>
-          {{ dia.conteudo }}
-        </ion-item>
-      </accordion>
-    </ion-slide>
+          </ion-col>
+          <ion-col col-8>
+            <div style="margin-top: 5px; font-size: 120%; font-weight: bold">Segunda-feira, 15/05</div>
+          </ion-col>
+          <ion-col col-2 (tap)="proximoDia()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <accordion *ngFor="let dia of segunda" [title]="dia.item" [corItem]="dia.corItem">
+          <ion-item>
+            {{ dia.conteudo }}
+          </ion-item>
+        </accordion>
+      </ion-slide>
 
-    <ion-slide>
-      <ion-row>
-        <ion-col col-2 (tap)="diaAnterior()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
-        </ion-col>
-        <ion-col col-8>
-          <div style="margin-top: 5px">Terça-feira, 15/05</div>
-        </ion-col>
-        <ion-col col-2 (tap)="proximoDia()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <accordion *ngFor="let dia of terca" [title]="dia.item">
-        <ion-item>
-          {{ dia.conteudo }}
-        </ion-item>
-      </accordion>      
-    </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col col-2 (tap)="diaAnterior()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-8>
+            <div style="margin-top: 5px; font-size: 120%; font-weight: bold">Terça-feira, 15/05</div>
+          </ion-col>
+          <ion-col col-2 (tap)="proximoDia()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <accordion *ngFor="let dia of terca" [title]="dia.item" [corItem]="dia.corItem">
+          <ion-item>
+            {{ dia.conteudo }}
+          </ion-item>
+        </accordion>      
+      </ion-slide>
 
-    <ion-slide>
-      <ion-row>
-        <ion-col col-2 (tap)="diaAnterior()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
-        </ion-col>
-        <ion-col col-8>
-          <div style="margin-top: 5px">Quarta-feira, 15/05</div>
-        </ion-col>
-        <ion-col col-2 (tap)="proximoDia()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <accordion *ngFor="let dia of quarta" [title]="dia.item">
-        <ion-item>
-          {{ dia.conteudo }}
-        </ion-item>
-      </accordion>      
-    </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col col-2 (tap)="diaAnterior()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-8>
+            <div style="margin-top: 5px; font-size: 120%; font-weight: bold">Quarta-feira, 15/05</div>
+          </ion-col>
+          <ion-col col-2 (tap)="proximoDia()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <accordion *ngFor="let dia of quarta" [title]="dia.item" [corItem]="dia.corItem">
+          <ion-item>
+            {{ dia.conteudo }}
+          </ion-item>
+        </accordion>      
+      </ion-slide>
 
-    <ion-slide>
-      <ion-row>
-        <ion-col col-2 (tap)="diaAnterior()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
-        </ion-col>
-        <ion-col col-8>
-          <div style="margin-top: 5px">Quinta-feira, 15/05</div>
-        </ion-col>
-        <ion-col col-2 (tap)="proximoDia()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
-        </ion-col>
-      </ion-row>
-      <accordion *ngFor="let dia of quinta" [title]="dia.item"  [corItem]="dia.corItem">
-        <ion-item>
-          {{ dia.conteudo }}
-        </ion-item>
-      </accordion>      
-    </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col col-2 (tap)="diaAnterior()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-8>
+            <div style="margin-top: 5px; font-size: 120%; font-weight: bold">Quinta-feira, 15/05</div>
+          </ion-col>
+          <ion-col col-2 (tap)="proximoDia()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-forward-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <accordion *ngFor="let dia of quinta" [title]="dia.item" [corItem]="dia.corItem">
+          <ion-item>
+            {{ dia.conteudo }}
+          </ion-item>
+        </accordion>      
+      </ion-slide>
 
-    <ion-slide>
-      <ion-row>
-        <ion-col col-2 (tap)="diaAnterior()">
-          <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
-        </ion-col>
-        <ion-col col-8>
-          <div style="margin-top: 5px">Sexta-feira, 15/05</div>
-        </ion-col>
-        <ion-col col-2>
-          
-        </ion-col>
-      </ion-row>
-      <accordion *ngFor="let dia of sexta" [title]="dia.item">
-        <ion-item>
-          {{ dia.conteudo }}
-        </ion-item>
-      </accordion>      
-    </ion-slide> 
-  </ion-slides>   
+      <ion-slide>
+        <ion-row>
+          <ion-col col-2 (tap)="diaAnterior()">
+            <ion-icon style="font-size: 30px" name="ios-arrow-back-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-8>
+            <div style="margin-top: 5px; font-size: 120%; font-weight: bold">Sexta-feira, 15/05</div>
+          </ion-col>
+          <ion-col col-2>
+            
+          </ion-col>
+        </ion-row>
+        <accordion *ngFor="let dia of sexta" [title]="dia.item" [corItem]="dia.corItem">
+          <ion-item>
+            {{ dia.conteudo }}
+          </ion-item>
+        </accordion>      
+      </ion-slide> 
+    </ion-slides>
+  </div>   
 </ion-content>

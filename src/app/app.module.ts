@@ -20,6 +20,7 @@ import { FaleConoscoPage } from '../pages/fale-conosco/fale-conosco';
 
 import { ServicosProvider } from '../providers/servicos/servicos';
 import { AccordionComponent } from '../components/accordion/accordion';
+import { CardapioLancheiraPage } from '../pages/cardapio-lancheira/cardapio-lancheira';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AccordionComponent } from '../components/accordion/accordion';
     CardapioEscolarPage,
     CardapioCorporativoPage,
     FaleConoscoPage,
-    AccordionComponent
+    AccordionComponent,
+    CardapioLancheiraPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { AccordionComponent } from '../components/accordion/accordion';
     CardapioPage,
     CardapioEscolarPage,
     CardapioCorporativoPage,
-    FaleConoscoPage
+    FaleConoscoPage,
+    CardapioLancheiraPage
   ],
   providers: [
     StatusBar,

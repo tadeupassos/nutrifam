@@ -10,6 +10,7 @@ export class ServicosProvider {
   public qry = 'http://tadeupassos.xyz/nutrifam/querys/';
 
   public cardapioSemana: any[] = [];
+  public cardapioLancheira: any[] = [];
 
   usuario = {
     nome: '',
@@ -57,12 +58,12 @@ export class ServicosProvider {
     window.localStorage.clear();
   }  
 
-  carregarCardapio(){
+  carregarCardapioSemana(){
 
     this.cardapioSemana = [];
     
     let headers = new Headers({ 'Content-Type' : 'application/x-www-form-urlencoded' });
-    let localiza = this.http.post(this.qry + "carregarCardapios.php",{
+    let localiza = this.http.post(this.qry + "carregarCardapioSemana.php",{
       'tipo_cardapio' : 4,
       'empresa' : 13,
       'semana' : 21
@@ -87,9 +88,44 @@ export class ServicosProvider {
         });
       }
 
-      console.log("cardapios: " + JSON.stringify(this.cardapioSemana));
+      //console.log("cardapios: " + JSON.stringify(this.cardapioSemana));
       
-    }, err => console.log('Deu erro carregarBrandsParaMapa(): ' + err));
+    }, err => console.log('Deu erro carregarCardapioSemana(): ' + err));
   }
+
+  carregarCardapioLancheira(){
+    
+    this.cardapioSemana = [];
+    
+    let headers = new Headers({ 'Content-Type' : 'application/x-www-form-urlencoded' });
+    let localiza = this.http.post(this.qry + "carregarCardapioLancheira.php",{
+      'tipo_cardapio' : 1,
+      'empresa' : 13,
+      'semana' : 21
+    },{
+      headers:headers,
+      method: 'POST'
+    }).map(res => res.json()).subscribe(data => {
+
+      for (let i = 0; i < data.length; i++){
+
+        this.cardapioLancheira.push({
+          tipoCardapio: data[i].tipoCardapio,
+          nomeEmpresa: data[i].nome,
+          numSemana: data[i].num_semana,
+          dataSemana: data[i].data_semana,
+          diaSemana: data[i].dia_semana,
+          dataDiaSemana: data[i].data_dia_semana,
+          item: data[i].item,
+          corItem: data[i].cor_item,
+          conteudo: data[i].conteudo,
+          obsDia: data[i].obs 
+        });
+      }
+
+      //console.log("cardapios: " + JSON.stringify(this.cardapioSemana));
+      
+    }, err => console.log('Deu erro carregarCardapioLancheira(): ' + err));
+  }  
 
 }

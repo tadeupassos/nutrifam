@@ -33,7 +33,8 @@ export class MyApp {
     
     this.serv.abrirNutrifam().then((isLoggedIn) => {
 
-      this.serv.carregarCardapio();
+      this.serv.carregarCardapioSemana();
+      this.serv.carregarCardapioLancheira();
 
       if (isLoggedIn == '1'){
         setTimeout(() => {

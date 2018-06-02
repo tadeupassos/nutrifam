@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { CardapioEscolarPage } from '../cardapio-escolar/cardapio-escolar';
+import { CardapioLancheiraPage } from '../cardapio-lancheira/cardapio-lancheira';
 
 @Component({
   selector: 'page-cardapio',
@@ -21,5 +22,9 @@ export class CardapioPage {
   abrirCardapioSemana(){
     this.navCtrl.push(CardapioEscolarPage);
   }
+
+  abrirCardapioLancheira(){
+    this.navCtrl.push(CardapioLancheiraPage);
+  }  
 
 }
