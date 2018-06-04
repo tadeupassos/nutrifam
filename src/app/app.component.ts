@@ -35,6 +35,7 @@ export class MyApp {
 
       this.serv.carregarCardapioSemana();
       this.serv.carregarCardapioLancheira();
+      this.serv.carregarCardapioCantina();
 
       if (isLoggedIn == '1'){
         setTimeout(() => {

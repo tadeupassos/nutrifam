@@ -21,6 +21,8 @@ import { FaleConoscoPage } from '../pages/fale-conosco/fale-conosco';
 import { ServicosProvider } from '../providers/servicos/servicos';
 import { AccordionComponent } from '../components/accordion/accordion';
 import { CardapioLancheiraPage } from '../pages/cardapio-lancheira/cardapio-lancheira';
+import { CardapioCantinaPage } from '../pages/cardapio-cantina/cardapio-cantina';
+import { UltimosEventosPage } from '../pages/ultimos-eventos/ultimos-eventos';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CardapioLancheiraPage } from '../pages/cardapio-lancheira/cardapio-lanc
     CardapioCorporativoPage,
     FaleConoscoPage,
     AccordionComponent,
-    CardapioLancheiraPage
+    CardapioLancheiraPage,
+    CardapioCantinaPage,
+    UltimosEventosPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,9 @@ import { CardapioLancheiraPage } from '../pages/cardapio-lancheira/cardapio-lanc
     CardapioEscolarPage,
     CardapioCorporativoPage,
     FaleConoscoPage,
-    CardapioLancheiraPage
+    CardapioLancheiraPage,
+    CardapioCantinaPage,
+    UltimosEventosPage
   ],
   providers: [
     StatusBar,

@@ -11,6 +11,7 @@ export class ServicosProvider {
 
   public cardapioSemana: any[] = [];
   public cardapioLancheira: any[] = [];
+  public cardapioCantina: any[]= [];
 
   usuario = {
     nome: '',
@@ -127,5 +128,63 @@ export class ServicosProvider {
       
     }, err => console.log('Deu erro carregarCardapioLancheira(): ' + err));
   }  
+
+  carregarCardapioCantina(){
+    
+    this.cardapioCantina = [];
+    let cantina: any[] = []
+    let dadosCantina: any[] = []
+    
+    let headers = new Headers({ 'Content-Type' : 'application/x-www-form-urlencoded' });
+    let localiza = this.http.post(this.qry + "carregarCardapioCantina.php",{
+      'tipo_cardapio' : 5,
+      'empresa' : 13
+    },{
+      headers:headers,
+      method: 'POST'
+    }).map(res => res.json()).subscribe(data => {
+
+      let comida: any;
+
+      for (let i = 0; i < data.length; i++){
+
+        cantina.push({
+          item: data[i].item,
+          corItem: data[i].cor_item,
+          conteudo: data[i].conteudo,
+          preco: data[i].preco,
+          obsDia: data[i].obs 
+        });
+
+
+        if(comida != data[i].item){
+
+          this.cardapioCantina.push({
+            nomeEmpresa: data[i].nome,
+            item: data[i].item,
+            dados: [],
+            corItem: data[i].cor_item
+          });
+
+          comida = data[i].item;
+        }
+      }
+
+      //console.log("todos os itens com precos " + JSON.stringify(cantina))
+
+      //console.log("2 itens " + JSON.stringify(this.cardapioCantina))
+
+      for (let i = 0; i <  this.cardapioCantina.length; i++){
+
+        this.cardapioCantina[i].dados = cantina.filter((item) => {
+          return item.item == this.cardapioCantina[i].item;
+        });
+
+      }
+
+      //console.log("2 itens e dados " + JSON.stringify(this.cardapioCantina))
+      
+    }, err => console.log('Deu erro carregarCardapioCantina(): ' + err));
+  }    
 
 }

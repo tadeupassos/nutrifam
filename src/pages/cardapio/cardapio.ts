@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { CardapioEscolarPage } from '../cardapio-escolar/cardapio-escolar';
 import { CardapioLancheiraPage } from '../cardapio-lancheira/cardapio-lancheira';
+import { CardapioCantinaPage } from '../cardapio-cantina/cardapio-cantina';
+import { UltimosEventosPage } from '../ultimos-eventos/ultimos-eventos';
 
 @Component({
   selector: 'page-cardapio',
@@ -26,5 +28,13 @@ export class CardapioPage {
   abrirCardapioLancheira(){
     this.navCtrl.push(CardapioLancheiraPage);
   }  
+
+  abrirCardapioCantina(){
+    this.navCtrl.push(CardapioCantinaPage);
+  }
+
+  abrirUltimosEventos(){
+    this.navCtrl.push(UltimosEventosPage);
+  }
 
 }
